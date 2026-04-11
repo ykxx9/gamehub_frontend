@@ -1,28 +1,21 @@
-* {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
 }
 
-
-.card {
-   margin: 24px auto;
-   padding-right: 24px;
-   border: 1px solid brown;
-   border-radius: 16px;
-
-
-   display: flex;
-   align-items: center;
-   gap: 24px;
-
-
-   max-width: fit-content;
+h1 {
+    color: blue;
 }
 
+button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
-img {
-   max-height: 125px;
-   border-top-left-radius: 12px;
-   border-bottom-left-radius: 12px;
+button:hover {
+    background-color: gray;
 }
