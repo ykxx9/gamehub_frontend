@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>GameHub</title>
 </head>
 <body>
 
-    <h1 id="title">Hello World</h1>
-    <button onclick="changeText()">Click Me</button>
+<h1>GameHub</h1>
 
-    <script src="script.js"></script>
+<!-- Add Game -->
+<h2>Add Game</h2>
+<input id="title" placeholder="Title"><br>
+<input id="description" placeholder="Description"><br>
+<input id="genre" placeholder="Genre"><br>
+<input id="rating" placeholder="Rating"><br>
+<input id="url" placeholder="Game URL"><br>
+<button onclick="addGame()">Add Game</button>
+
+<hr>
+
+<!-- Search -->
+<h2>Search</h2>
+<input id="search" placeholder="Search by title">
+<button onclick="searchGames()">Search</button>
+
+<hr>
+
+<!-- Games List -->
+<h2>Games</h2>
+<button onclick="loadGames()">Load Games</button>
+<ul id="gamesList"></ul>
+
+<script>
+const API = "http://127.0.0.1:6090";
+
+// Add Game
+function addGame() {
+    fetch(`${API}/games`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: document.getElementById("title").value,
+            description: document.getElementById("description").value,
+            genre: document.getElementById("genre").value,
+            rating: parseFloat(document.getElementById("rating").value),
+            game_url: document.getElementById("url").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data));
+}
+
+// Load all games
+function loadGames() {
+    fetch(`${API}/games`)
+    .then(res => res.json())
+    .then(data => renderGames(data));
+}
+
+// Search games
+function searchGames() {
+    const query = document.getElementById("search").value;
+
+    fetch(`${API}/games/search?q=${query}`)
+    .then(res => res.json())
+    .then(data => renderGames(data));
+}
+
+// Render list
+function renderGames(data) {
+    const list = document.getElementById("gamesList");
+    list.innerHTML = "";
+
+    data.forEach(game => {
+        const li = document.createElement("li");
+        li.innerText = `${game.title} | ${game.genre} | ${game.rating}`;
+        list.appendChild(li);
+    });
+}
+</script>
+
 </body>
 </html>
