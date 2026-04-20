@@ -1,5 +1,32 @@
 const BASE_URL = "http://127.0.0.1:6090";
 
+let allGames = [];
+
+function viewGame(id) {
+    const game = allGames.find(g => g.id === id);
+
+    const detail = document.getElementById("game-detail");
+    const list = document.getElementById("game-list");
+
+    list.style.display = "none";
+    detail.style.display = "block";
+
+    detail.innerHTML = `
+        <h2>${game.title}</h2>
+        <p><strong>Genre:</strong> ${game.genre}</p>
+        <p>${game.description}</p>
+        <p><strong>Rating:</strong> ${game.rating}</p>
+        <a href="${game.game_url}" target="_blank">Play / Download</a>
+        <br><br>
+        <button onclick="goBack()">Back</button>
+    `;
+}
+
+function goBack() {
+    document.getElementById("game-detail").style.display = "none";
+    document.getElementById("game-list").style.display = "flex";
+}
+
 // ---------------- AUTH ----------------
 
 function register() {
@@ -50,33 +77,19 @@ function addGame() {
 }
 
 function getGames() {
-    fetch(`${BASE_URL}/games`)
+    fetch("http://127.0.0.1:6090/games")
     .then(res => res.json())
     .then(data => {
-        console.log("GAMES:", data);
+        allGames = data;
 
         const container = document.getElementById("game-list");
         container.innerHTML = "";
 
-        if (!Array.isArray(data)) {
-            console.error("Expected array:", data);
-            return;
-        }
-
         data.forEach(game => {
-            const div = document.createElement("div");
-
-            div.innerHTML = `
-                <h3>${game.title}</h3>
-                <p>${game.genre}</p>
-                <p>${game.description || ""}</p>
-                <hr>
-            `;
-
-            container.appendChild(div);
+            const card = createGameCard(game);
+            container.appendChild(card);
         });
-    })
-    .catch(err => console.error(err));
+    });
 }
 
 function updateGame() {
@@ -103,4 +116,24 @@ function deleteGame() {
     .then(res => res.json())
     .then(data => console.log("DELETE:", data))
     .catch(err => console.error(err));
+}
+
+
+function createGameCard(game) {
+    const card = document.createElement("div");
+
+    card.style.border = "1px solid #ccc";
+    card.style.padding = "10px";
+    card.style.margin = "10px";
+    card.style.width = "250px";
+
+    card.innerHTML = `
+        <h3>${game.title}</h3>
+        <p><strong>Genre:</strong> ${game.genre}</p>
+        <p>${game.description || ""}</p>
+        <p><strong>Rating:</strong> ${game.rating || "N/A"}</p>
+        <button onclick="viewGame(${game.id})">View</button>
+    `;
+
+    return card;
 }
