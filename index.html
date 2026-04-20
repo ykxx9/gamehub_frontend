@@ -1,7 +1,31 @@
-<body>
-  <h1>Vyntrix</h1>
-  <div id="game-list"></div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vyntrix</title>
+</head>
 
-  <script src="data/games.js"></script>
-  <script src="script.js"></script>
+<body>
+
+<h1>Vyntrix Dashboard</h1>
+
+<h2>Auth</h2>
+<button onclick="register()">Register</button>
+<button onclick="login()">Login</button>
+
+<hr>
+
+<h2>Game Actions</h2>
+<button onclick="addGame()">Add Game</button>
+<button onclick="getGames()">Load Games</button>
+<button onclick="updateGame()">Update Game</button>
+<button onclick="deleteGame()">Delete Game</button>
+
+<hr>
+
+<h2>Games List</h2>
+<div id="game-list"></div>
+
+<script src="script.js"></script>
+
 </body>
+</html>
