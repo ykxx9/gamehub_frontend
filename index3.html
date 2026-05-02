@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillars of Pixels - Retro Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Pillars of Pixels <i class="fas fa-gamepad"></i></h2>
+        </div>
+        <div class="nav-links">
+            <button class="btn btn-outline" id="randomGameNavBtn">Play Random Game</button>
+            <button class="btn btn-primary" id="authBtn">Sign In</button>
+            <button class="btn btn-primary hidden" id="addGameNavBtn"><i class="fas fa-plus"></i> Add Game</button>
+            <button class="btn btn-outline hidden" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Play Retro<br>Games For Free</h1>
+            <p>Why waste seventy bucks on a triple A game that just feels and plays the same as any other triple A game. Pillars of Pixels let's you play quality retro games made by game lovers. For free.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="chooseGameBtn">Choose Game</button>
+                <button class="btn btn-outline" id="randomGameHeroBtn">Play Random Game</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content" id="games-section">
+        <div class="section-header">
+            <h2>Choose a retro game made by passionate video game designers.</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search games by title or genre...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Game cards will be injected here via JS -->
+            <div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading retro games...</div>
+        </div>
+    </main>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close" id="closeAuth">&times;</span>
+            <h2 id="authTitle">Sign In</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="authSubmitBtn">Login</button>
+                <p class="switch-auth">
+                    <span id="authSwitchText">Don't have an account? </span>
+                    <a href="#" id="authSwitchBtn">Register</a>
+                </p>
+                <div id="authMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Game Modal -->
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <span class="close" id="closeGameModal">&times;</span>
+            <h2 id="gameModalTitle">Add New Game</h2>
+            <form id="gameForm">
+                <input type="hidden" id="gameId">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="gameTitle" placeholder="e.g. Dante is going down" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="gameDescription" placeholder="What is this game about?" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Genre</label>
+                    <input type="text" id="gameGenre" placeholder="e.g. Platform Game">
+                </div>
+                <div class="form-group">
+                    <label>Rating (Out of 5.0)</label>
+                    <input type="number" step="0.1" min="0" max="5" id="gameRating" placeholder="e.g. 4.8">
+                </div>
+                <div class="form-group">
+                    <label>Game URL</label>
+                    <input type="url" id="gameUrl" placeholder="https://link-to-play.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Cover Image URL (Optional)</label>
+                    <input type="url" id="gameCoverUrl" placeholder="https://link-to-image.png">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Save Game</button>
+                <div id="gameMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
