@@ -1,190 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- SEO Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pillars of Pixels - Play quality retro games made by passionate video game designers for free.">
-    <title>Pillars of Pixels | Free Retro Games</title>
-</head>
-<link rel="stylesheet" href="style2.css" />
 <body>
 
-    <!-- ========================================== -->
-    <!-- TOP HEADER BLOCK -->
-    <!-- ========================================== -->
-    <header>
-        <!-- Logo Block (Left side) -->
-        <div class="logo-container">
-            <!-- Link wrapping the logo for SEO/UX -->
-            <a href="/" aria-label="Go to Pillars of Pixels Homepage">
-                <!-- Logo Image Placeholder -->
-                <img src="" alt="Pillars of Pixels Icon">
-                <!-- Logo Text Space -->
-                <span class="logo-text">VYNTRIX</span>
-            </a>
-        </div>
-        
-        <!-- Header Navigation/Action Block (Right side) -->
-        <nav class="header-actions">
-            <!-- Header Button Text -->
-            <a href="#" class="button outline-button">Play Random Game</a>
-        </nav>
-    </header>
+<div class="navbar">
+    <h1>Vyntrix</h1>
+</div>
 
-    <!-- ========================================== -->
-    <!-- MAIN CONTENT BLOCK -->
-    <!-- ========================================== -->
-    <main>
+<div class="container">
 
-        <!-- ========================================== -->
-        <!-- HERO SECTION BLOCK (Top Banner) -->
-        <!-- ========================================== -->
-        <section class="hero-section">
-            
-            <!-- Hero Decorative Image/Background Space (Right side visual) -->
-            <div class="hero-visual" aria-hidden="true">
-                <!-- Placeholder for the large landscape pixel art -->
-                <img src="" alt="Retro pixel art landscape background">
-            </div>
+    <div class="form-section">
+        <h2>Add Game</h2>
 
-            <!-- Hero Content Block (Left side text and buttons) -->
-            <article class="hero-content">
-                <!-- Hero Main Heading Text (H1 for SEO) -->
-                <h1>Play Retro Games For Free</h1>
-                
-                <!-- Hero Description Text -->
-                <p>Why waste seventy bucks on a triple A game that just feels and plays the same as any other triple A game. Pillars of Pixels let's you play quality retro games made by game lovers. For free.</p>
-                
-                <!-- Hero Buttons Block -->
-                <div class="hero-button-group">
-                    <!-- Call To Action Button 1 Text -->
-                    <a href="#" class="button primary-button">Choose Game</a>
-                    <!-- Call To Action Button 2 Text -->
-                    <a href="#" class="button secondary-button">Play Random Game</a>
-                </div>
-            </article>
+        <input id="title" placeholder="Title">
+        <input id="genre" placeholder="Genre">
+        <input id="description" placeholder="Description">
+        <input id="game_url" placeholder="Game URL">
 
-        </section>
+        <button onclick="submitGame()">Add Game</button>
+    </div>
 
-        <!-- ========================================== -->
-        <!-- GAMES SHOWCASE SECTION BLOCK (Grid Area) -->
-        <!-- ========================================== -->
-        <section class="games-showcase">
-            
-            <!-- Showcase Header Block (Left side text) -->
-            <header class="showcase-header">
-                <!-- Section Heading Text (H2 for SEO hierarchy) -->
-                <h2>Choose a retro game made by passionate video game designers.</h2>
-            </header>
+    <h2>Explore Games</h2>
 
-            <!-- Games Grid Container Block (Right side spanning multiple columns) -->
-            <div class="games-grid">
-                
-                <!-- Game Card Item 1 Block -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Dante is going down gameplay screenshot" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text (H3 for SEO hierarchy) -->
-                        <h3>Dante is going down</h3>
-                        <!-- Game Genre/Category Text -->
-                        <p>Platform Game</p>
-                    </div>
-                </article>
+    <div id="game-list" class="grid"></div>
 
-                <!-- Game Card Item 2 Block -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Woodland Builders gameplay screenshot" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text -->
-                        <h3>Woodland Builders</h3>
-                        <!-- Game Genre/Category Text -->
-                        <p>Strategy Game</p>
-                    </div>
-                </article>
+    <div id="game-detail" class="detail"></div>
 
-                <!-- Game Card Item 3 Block -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Heaps of Creeps gameplay screenshot" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text -->
-                        <h3>Heaps of Creeps</h3>
-                        <!-- Game Genre/Category Text -->
-                        <p>Platform Game</p>
-                    </div>
-                </article>
+</div>
 
-                <!-- Game Card Item 4 Block (Bottom row, partially visible) -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Placeholder Game 4" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text Space -->
-                        <h3><!-- Insert Game Title Here --></h3>
-                        <!-- Game Genre/Category Text Space -->
-                        <p><!-- Insert Game Genre Here --></p>
-                    </div>
-                </article>
-
-                <!-- Game Card Item 5 Block (Bottom row, partially visible) -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Placeholder Game 5" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text Space -->
-                        <h3><!-- Insert Game Title Here --></h3>
-                        <!-- Game Genre/Category Text Space -->
-                        <p><!-- Insert Game Genre Here --></p>
-                    </div>
-                </article>
-
-                <!-- Game Card Item 6 Block (Bottom row, partially visible) -->
-                <article class="game-card">
-                    <!-- Game Card Image Space -->
-                    <figure>
-                        <img src="" alt="Placeholder Game 6" loading="lazy">
-                    </figure>
-                    <!-- Game Card Text Details Space -->
-                    <div class="game-details">
-                        <!-- Game Title Text Space -->
-                        <h3><!-- Insert Game Title Here --></h3>
-                        <!-- Game Genre/Category Text Space -->
-                        <p><!-- Insert Game Genre Here --></p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ========================================== -->
-    <!-- FOOTER BLOCK (Not in image, but good practice) -->
-    <!-- ========================================== -->
-    <footer>
-        <div class="footer-content">
-            <!-- Footer text and links space -->
-            <p>&copy; Pillars of Pixels. All rights reserved.</p>
-        </div>
-    </footer>
+<link rel="stylesheet" href="style2.css">
+<script src="script.js"></script>
 
 </body>
-</html>

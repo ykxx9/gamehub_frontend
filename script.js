@@ -121,19 +121,16 @@ function deleteGame() {
 
 function createGameCard(game) {
     const card = document.createElement("div");
-
-    card.style.border = "1px solid #ccc";
-    card.style.padding = "10px";
-    card.style.margin = "10px";
-    card.style.width = "250px";
+    card.className = "card";
 
     card.innerHTML = `
         <h3>${game.title}</h3>
-        <p><strong>Genre:</strong> ${game.genre}</p>
-        <p>${game.description || ""}</p>
-        <p><strong>Rating:</strong> ${game.rating || "N/A"}</p>
+        <p>${game.genre}</p>
+        <p>⭐ ${game.rating || "N/A"}</p>
         <button onclick="viewGame(${game.id})">View</button>
     `;
 
     return card;
 }
+
+const BASE_URL = "http://127.0.0.1:6090";
