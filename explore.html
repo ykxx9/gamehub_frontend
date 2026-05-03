@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explore | Vyntrix</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body onload="getgames()">
+    <nav class="navbar">
+        <div class="logo">VYNTRIX</div>
+        <div class="nav-center">
+            <a href="explore.html">Explore</a>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Explore Games</h1>
+        
+        <div class="filter-bar">
+            <input type="text" id="search-input" placeholder="Search by title..." oninput="searchgames()">
+            
+            <select id="genre-filter" onchange="filtergenre()">
+                <option value="all">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="RPG">RPG</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Racing">Racing</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Simulation">Simulation</option>
+            </select>
+        </div>
+
+        <div id="game-grid" class="game-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

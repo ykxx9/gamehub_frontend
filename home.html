@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home | Vyntrix</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">VYNTRIX</div>
+        <div class="nav-center">
+            <a href="explore.html">Explore</a>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Level Up Your Library</h1>
+            <p>Discover the best indie and retro games in one place.</p>
+            <div class="btns">
+                <a href="explore.html" class="btn">Choose Game</a>
+                <a href="random.html" class="btn outline">Play Random Game</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <div class="container">
+            <h2>Trending Games</h2>
+            <div id="game-grid" class="game-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>window.onload = getgames;</script>
+</body>
+</html>

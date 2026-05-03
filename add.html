@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Game | Vyntrix</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+<body onload="checkedit()">
+    <nav class="navbar">
+        <div class="logo">VYNTRIX</div>
+        <div class="nav-center">
+            <a href="explore.html">Explore</a>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-card">
+            <h1 id="page-title">Add New Game</h1>
+            <input type="hidden" id="game-id">
+            
+            <div class="field">
+                <label>Title</label>
+                <input type="text" id="title" placeholder="Game title">
+            </div>
+            
+            <div class="field">
+                <label>Genre</label>
+                <select id="genre">
+                    <option value="Action">Action</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Simulation">Simulation</option>
+                </select>
+            </div>
+            
+            <div class="field">
+                <label>Description</label>
+                <textarea id="desc" placeholder="Game description"></textarea>
+            </div>
+            
+            <div class="field">
+                <label>Rating (0-5)</label>
+                <input type="number" id="rating" step="0.1" min="0" max="5">
+            </div>
+            
+            <div class="field">
+                <label>Image</label>
+                <input type="text" value="placeholder" disabled>
+            </div>
+            
+            <button onclick="submitgame()">Save Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

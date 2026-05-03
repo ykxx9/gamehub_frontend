@@ -1,0 +1,96 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111111;
+    border-bottom: 2px solid #a855f7;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a855f7;
+}
+
+.nav-center a, .nav-right a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #a855f7;
+    margin-bottom: 40px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+input, select {
+    padding: 12px;
+    background: #111111;
+    border: 1px solid #333333;
+    color: white;
+    border-radius: 5px;
+}
+
+#search-input {
+    flex: 1;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background: #111111;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #222222;
+}
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    margin: 0 0 5px 0;
+    color: #a855f7;
+}
+
+.card-body p {
+    margin: 0;
+    color: #888888;
+}
+
+.card-body span {
+    display: block;
+    margin-top: 10px;
+    color: #f59e0b;
+    font-size: 14px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random | Vyntrix</title>
+    <link rel="stylesheet" href="random.css">
+</head>
+<body onload="getrandom()">
+    <nav class="navbar">
+        <div class="logo">VYNTRIX</div>
+        <div class="nav-center">
+            <a href="explore.html">Explore</a>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Discover Something Random</h1>
+        
+        <div id="random-box" class="random-card">
+            <p>Loading...</p>
+        </div>
+
+        <div class="action">
+            <button onclick="getrandom()">Next Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

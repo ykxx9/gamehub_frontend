@@ -1,0 +1,103 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111111;
+    border-bottom: 2px solid #a855f7;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a855f7;
+}
+
+.nav-center a, .nav-right a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    padding: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #a855f7;
+}
+
+.btn-add {
+    background: #a855f7;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.game-row {
+    background: #111111;
+    padding: 20px;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-row strong {
+    font-size: 20px;
+    color: #a855f7;
+}
+
+.game-row span {
+    color: #888888;
+}
+
+button {
+    background: transparent;
+    color: #a855f7;
+    border: 1px solid #a855f7;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #a855f7;
+    color: white;
+}
+
+.btn-del {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.btn-del:hover {
+    background: #ff4444;
+    color: white;
+}
