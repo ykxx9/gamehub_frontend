@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random | Vyntrix</title>
-    <link rel="stylesheet" href="random.css">
+    <title>Your Collection | Vyntrix</title>
+    <link rel="stylesheet" href="collection.css">
 </head>
-<body onload="getrandom()">
+<body onload="getcollection()">
     <nav class="navbar">
         <div class="logo"><a href="home.html">Vyntrix</a></div>
         <div class="nav-center">
@@ -21,15 +21,8 @@
     </nav>
 
     <div class="container">
-        <h1>Discover Something Random</h1>
-        
-        <div id="random-box" class="random-card">
-            <p>Loading...</p>
-        </div>
-
-        <div class="action">
-            <button onclick="getrandom()">Next Game</button>
-        </div>
+        <h1>Your Collection</h1>
+        <div id="game-grid" class="game-grid"></div>
     </div>
 
     <script src="script.js"></script>
