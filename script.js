@@ -1,4 +1,4 @@
-var base_url = "http://127.0.0.1:6090";
+var base_url = "https://gamehub-backend-h1mk.onrender.com";
 var all_games = [];
 
 function getuser() {
